@@ -31,7 +31,6 @@ public class Main {
             case 18:
                 System.out.println("Bạn là thanh niên");
                 break;
-
             default:
                 System.out.println("Tuổi không khớp với dữ liệu của chúng tôi");
         }
@@ -83,6 +82,7 @@ public class Main {
              ) {
             System.out.println(num);
         }*/
+
 
     }/**/
 }
