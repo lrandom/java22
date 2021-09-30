@@ -5,84 +5,71 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        /*String weather = "Weather";
-        if (weather.equals("Sunny")) {
-            System.out.println("Đi chơi thôi");
-        }*/
 
+        //Cách thứ 1
+/*        int[] ages = new int[10];
+        ages[0] = 1;
+        ages[2] = 2;*/
+
+        //null
+
+
+        //Cách thứ hai
 /*
-        int age = 10;
-        if (age <= 10) {
-            System.out.println("Bạn là nhi đồng");
-        } else if (age >= 14 && age <= 16) {
-            System.out.println("Bạn là thanh thiếu niên");
-        } else if (age >= 18) {
-            System.out.println("Bạn là thanh niên");
-        }
-
-        age = 50;
-        switch (age) {
-            case 10:
-                System.out.println("Bạn là nhi đồng");
-                break;
-            case 14:
-                System.out.println("Bạn là thanh thiếu niên");
-                break;
-            case 18:
-                System.out.println("Bạn là thanh niên");
-                break;
-            default:
-                System.out.println("Tuổi không khớp với dữ liệu của chúng tôi");
-        }
+        String[] names = new String[]{
+                "Nam",
+                "Long",
+                "Linh",
+                "Lê"
+        };
 */
 
-        //if lồng nhau - nested if
-/*        if (age == 50) {
-            if (age > 50) {
-                System.out.println("Bạn lớn hơn 50 tuổi");
-            }
-        }*/
-
-        //for - vòng lặp biết trước số lần lặp
-        //while / do-while - vòng lặp ko biết trước số lần lặp
-        // for-each -  vòng lặp được sử dụng để duyệt danh sách
-
-/*        for (int i = 0; i < 10; i++) {
-
-        }*/
-
-        /*int index = 100;
-        while (index < 10) {
-            //statement
-            System.out.println("Hello");
-            index++;
-        } //so sánh đk trước và thực hiện lệnh sau // có 0 lần chạy lệnh/chạy vô hạn*/
-
-/*        int a = 100;
-        do {
-            System.out.println("Hello");
-            a++;
-        } while (a < 10);*/
-        //thực hiện lệnh trc và kiểm tra điều kiện sau // ít nhất 1 lần chạy lệnh
-
-
-        int numbers[] = {
-                1, 2, 3, 4, 5};
-
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.println(numbers[i]);
-            if (numbers[i] == 2) {
-                continue;
-            }
+     /*   System.out.printf(name[0]);
+        System.out.printf(name[1]);
+        System.out.printf(name[2]);
+        System.out.printf(name[3]);
+*/
+     /*   for (int i = 0; i < ages.length; i++) {
+            System.out.println(ages[i]+"");
         }
-        //4 5
-        //1 2 3 4 5
 
-/*        for (int num: numbers
+        for (String name: names
              ) {
-            System.out.println(num);
+            System.out.println(name);
         }*/
 
+        int[][] matrixAge = new int[2][3];
 
-    }/**/
+        matrixAge[0][0] = 1;
+        matrixAge[0][1] = 2;
+        matrixAge[0][2] = 3;
+
+        matrixAge[1][0] = 4;
+        matrixAge[1][1] = 5;
+        matrixAge[1][2] = 6;
+
+/*        1 2 3
+        4 5 6    */
+
+        for (int i = 0; i < matrixAge.length; i++) {
+            for (int j = 0; j < matrixAge[i].length; j++) {
+                System.out.printf(matrixAge[i][j]+"");
+            }
+            System.out.printf("%n");
+        }
+
+
+        String[][] matrixNames = new String[][]{
+                {"Linh","Lê","Nam"},
+                {"Tuan","Vinh","Quang"}
+        };
+
+        for (int i = 0; i < matrixNames.length; i++) {
+            for (int j = 0; j < matrixNames[i].length; j++) {
+                System.out.printf(matrixNames[i][j]+"");
+            }
+            System.out.printf("%n");
+        }
+
+    }
 }
