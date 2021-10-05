@@ -9,6 +9,33 @@ public class Human {
     float weight;
     String faceDescription;
 
+    public Human() {
+
+    }
+
+    public Human(String name) {
+        this.name = name;
+    }
+
+    public Human(String eyeColor, String hairColor) {
+        this.eyeColor = eyeColor;
+        this.hairColor = hairColor;
+    }
+
+    public Human(String name,
+                 String eyeColor,
+                 String hairColor,
+                 float height,
+                 float weight,
+                 String faceDescription) {
+        this.name = name;
+        this.eyeColor = eyeColor;
+        this.hairColor = hairColor;
+        this.height = height;
+        this.weight = weight;
+        this.faceDescription = faceDescription;
+    }
+
     public String getEyeColor() {
         return eyeColor;
     }
