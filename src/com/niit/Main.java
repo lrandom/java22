@@ -41,12 +41,74 @@ public class Main {
         }*/
 
 
-        FileOutputStream fos;
-
+/*        FileOutputStream fos;
+        BufferedOutputStream bufferedOutputStream;
+        FileWriter fileWriter;
+        BufferedWriter bufferedWriter;*/
+        /*
         try {
             fos = new FileOutputStream("/Users/lrandom/Desktop/note.txt",false);
-            fos.write(new String("ABCDEF").getBytes());
+            bufferedOutputStream = new BufferedOutputStream(fos);
+            bufferedOutputStream.write(new String("ABCDEF").getBytes());
+            bufferedOutputStream.flush();
+            bufferedOutputStream.close();
             fos.close();
+        } catch (Exception e) {
+
+        }*/
+/*
+        try {
+            fileWriter = new FileWriter("/Users/lrandom/Desktop/note.txt");
+            bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write("Hello, java web 22");
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+            fileWriter.close();
+            bufferedWriter.close();
+        } catch (Exception e) {
+
+        }*/
+
+
+    /*    File file = new File("/Users/lrandom/Desktop/vue/sub");
+        if (!file.exists()) {
+            file.mkdir();
+        }*/
+        //0775 - > read write execute : đọc ghi thực thi
+                  // 4     2     1 =  5
+
+        //chown : user, group user, everybody
+        //chmod trong linux/unix
+
+   /*     File files[] = file.listFiles();
+        for (int i = 0; i < files.length ; i++) {
+            System.out.println(files[i].getName());
+        }*/
+
+
+
+        //GHI VÀO MỘT OBJECT
+        try {
+            FileOutputStream fos = new FileOutputStream("/Users/lrandom/Desktop/vue/sub/user.dat");
+            ObjectOutputStream obj = new ObjectOutputStream(fos);
+            User user = new User();
+            user.setName("Luan");
+            user.setId("001");
+            obj.writeObject(user);
+            obj.close();
+            fos.close();
+        } catch (Exception e) {
+
+        }
+
+        try {
+            FileInputStream fis = new FileInputStream("/Users/lrandom/Desktop/vue/sub/user.dat");
+            ObjectInputStream obj = new ObjectInputStream(fis);
+            User user = (User) obj.readObject();
+            System.out.println(user.getName());
+            System.out.println(user.getId());
+            obj.close();
+            fis.close();
         } catch (Exception e) {
 
         }
