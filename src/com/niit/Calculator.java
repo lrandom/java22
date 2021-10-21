@@ -6,6 +6,10 @@ public class Calculator<T, K> {
         System.out.println(num2);
     }
 
+    public<E> void sayHi(E a) {
+        System.out.println(a);
+    }
+
     public static void main(String[] args) {
         Calculator calculator = new Calculator<String, String>();
         calculator.printNum("1", "2");
@@ -15,5 +19,11 @@ public class Calculator<T, K> {
 
         Calculator calculator2 = new Calculator<Float, Float>();
         calculator2.printNum(new Float(1).floatValue(),new Float(2).floatValue());
+
+        //generic methods
+        calculator.sayHi(new String("Hello"));
+        calculator.sayHi(new Float(1));
+        calculator.sayHi(new Integer(2));
+
     }
 }
