@@ -28,7 +28,5 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Khong ket noi duoc den CSDL");
         }
-
-
     }
 }
