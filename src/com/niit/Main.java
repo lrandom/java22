@@ -1,30 +1,34 @@
 package com.niit;
 
 import java.io.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Thread t1 = new MyThread();
-        Thread t2 = new MyThread();
-        Thread t3 = new MyThread();
-
-        t1.start();
-        t1.setPriority(1);
+        Connection conn;
         try {
-            t1.join();
-        } catch (Exception e) {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/javaweb_22";
+            conn = DriverManager.getConnection(url, "root", "koodinh@");
 
+            //tạo ra một statement để thực thi câu lệnh SQL
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery("SELECT * FROM users");
+            while (rs.next()) {
+                System.out.print(rs.getInt("id"));
+                System.out.print(rs.getString("fullname"));
+                System.out.print(rs.getString("username"));
+                System.out.print(rs.getString("address"));
+                System.out.printf("%n");
+            }
+        } catch (Exception e) {
+            System.out.println("Khong ket noi duoc den CSDL");
         }
 
-        t2.start();
-        t2.setPriority(7);
-        t3.start();
-        t3.setPriority(8);
-
-        Thread t4 = new Thread(new MyThread2());
-        t4.start();
-        t4.setPriority(10);
 
     }
 }
